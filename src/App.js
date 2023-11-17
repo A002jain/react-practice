@@ -8,6 +8,8 @@ import { appEnv } from "./AppConfig";
 import { BrowserRouter, Route, Routes, Outlet } from "react-router-dom";
 import ToDO from "./todo/todo";
 import FamilyTree from "./family/family";
+import SideBar from "./sidebar/sidebar1/sidebar";
+// import VideoPlayer from "./videoPlayer/videoComp";
 
 
 
@@ -46,6 +48,7 @@ function DocumentForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    console.log(`${appEnv().baseUrl}/write`)
     console.log(formData)
     axios.post(`${appEnv().baseUrl}/write`,formData)
     .then((res) => {
@@ -77,16 +80,40 @@ function DocumentForm() {
 }
 
 function Index() {
+
+  const [show, setShow] = useState(false);
+
+  const toggleSidebar = () => {
+      console.log(show);
+      setShow(!show);
+  }
+
   return (
     <div className="container-fluid">
-      <EditorNav/>
-      <div className="content">
-        <Outlet />
+      <div className="head-container">
+        <EditorNav toggleSidebar={toggleSidebar}/>
+      </div>
+      <div className="middle-container">
+        <SideBar show={show}  toggleSidebar={toggleSidebar}/>
+        <div className="content">
+          <Outlet />
+        </div>
       </div>
     </div>
   );
 }
-const Home = () => <h1>Home</h1>
+const Home = () => {
+  return(
+    <>
+    <div className="App">
+      <h1>Home</h1>
+      {/* <VideoPlayer/> */}
+    </div>
+    {/* <div className="leftBar">
+    </div> */}
+    </> 
+  )
+}
 
 function App() {
   return (

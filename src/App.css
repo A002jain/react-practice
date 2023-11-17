@@ -1,12 +1,13 @@
 .App {
   padding: 1.5rem;
-  margin-top: 1.5rem;
-}
+  /* margin-top: 5em; */
+ }
+
 
 @media screen and (min-width: 700px) {
   .App {
+    /* padding-left: 20%; */
     padding: 1.5rem 25% 1.5rem 25%;
-    margin-top: 1.5rem;
   }
 }
 
@@ -18,13 +19,11 @@
 
 .todo-container{
   padding: 1.5rem;
-  margin-top: 1.5rem;
 }
 
 @media screen and (min-width: 700px) {
   .todo-container {
     padding: 1.5rem 25% 1.5rem 25%;
-    margin-top: 1.5rem;
   }
 }
 
@@ -39,6 +38,9 @@ body{
 
 .container-fluid{
   padding: 0;
+}
+.head-container{
+  display: block;
 }
 
 .c-dark{
@@ -56,8 +58,6 @@ body{
   grid-template-columns: auto auto;
   gap: 15px;
 }
-
-
 
 input[type=date] {
   position: relative;
@@ -120,3 +120,61 @@ ul{
     column-gap: 20px;
   }
 }
+
+.head-container{
+  background-color :#141824;
+  color: white;
+}
+
+.nav-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+
+.navbarTab-container{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
+.navbarTab {
+  color: #b8b9bd;
+  border-radius: 17px 5px 17px 5px;
+  /* margin-left: 7px; */
+  padding: 10px 3px 10px 5px;
+  text-decoration: none;
+  font-size: large;
+}
+
+.navbarTab:hover {
+  background-color: #31374a;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.middle-container {
+  display: block;
+}
+
+.logo-container{
+  font-size: large;
+  margin: auto;
+
+}
+
+/* .content{
+  display: flex;
+  flex-direction: row;
+}
+
+.App{
+  display: block;
+  width: 80%;
+} */
+/* 
+.leftBar{
+  width: 20%;
+} */
